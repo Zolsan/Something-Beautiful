@@ -66,16 +66,16 @@ define gui.name_text_font = "Zolfont-Regular.ttf"
 define gui.interface_text_font = "Zolfont-Regular.ttf"
 
 ## The size of normal dialogue text.
-define gui.text_size = 33
+define gui.text_size = 50
 
 ## The size of character names.
-define gui.name_text_size = 45
+define gui.name_text_size = 60
 
 ## The size of text in the game's user interface.
-define gui.interface_text_size = 33
+define gui.interface_text_size = 45
 
 ## The size of labels in the game's user interface.
-define gui.label_text_size = 36
+define gui.label_text_size = 50
 
 ## The size of text on the notify screen.
 define gui.notify_text_size = 24
@@ -97,7 +97,7 @@ define gui.game_menu_background = "gui/game_menu.png"
 ## a time.
 
 ## The height of the textbox containing dialogue.
-define gui.textbox_height = 278
+define gui.textbox_height = 300
 
 ## The placement of the textbox vertically on the screen. 0.0 is the top, 0.5
 ## is center, and 1.0 is the bottom.

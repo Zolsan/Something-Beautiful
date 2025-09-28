@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("Renpy Demo")
+define config.name = _("Something Beautiful")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -23,7 +23,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "1.0"
+define config.version = "Verson One"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -37,7 +37,7 @@ define gui.about = _p("""
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "RenpyDemo"
+define build.name = "SomethingBeautiful"
 
 
 ## Sounds and music ############################################################
@@ -47,7 +47,7 @@ define build.name = "RenpyDemo"
 ## appropriate mixer.
 
 define config.has_sound = True
-define config.has_music = True
+define config.has_music = False
 define config.has_voice = True
 
 
