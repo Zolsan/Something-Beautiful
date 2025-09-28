@@ -249,15 +249,25 @@ label start:
 
         d "Roof!"
 
+    scene bg forest clearing
+
     "Slowly, we make it closer to the clearing."
 
     "The dog looks skiddish. Each step is overly light, and every now and then it gives a shiver."
 
     if dogLeashed == True:
+
+        show alum norm stand at left
+        show dog stand at right
+
         a "You cold buddy?"
         "We've been walking for a while now. Rest would be smart, even if just for a bit."
         "Let's see..."
     else:
+
+        show alum norm tired at left
+        show dog stand at right
+
         a "You cold?"
         a "....Me too."
         "Maybe we're in need of a rest"
@@ -397,8 +407,6 @@ label start:
                 
                 a "Perdu, you go over. Go.. find some help! Please!"
 
-                a "You got that?"
-
                 show dog patched stand at right
                 a "Roof!"
 
@@ -418,7 +426,7 @@ label start:
 
                 scene bg street
 
-                "It's just about five o'clock."
+                "It's five thirty."
 
                 "I hear the prancing of a dog coming closer, along with separate set of footsteps."
 
@@ -440,6 +448,205 @@ label start:
             elif dogOverFence == False:
 
                 "With the best of my efforts, I manage to get myself over the fence"
+
+                a "You stay here buddy... okay?"
+
+                a "I'll be back! So please! Stay! Okay?"
+
+                scene bg street
+
+                "The dog whines. Slowly.. I back away."
+
+                scene bg cafe
+
+                "I spot Hiba immediately at an empty booth"
+
+                show alum 1arm surprise at center
+                
+                a "Hiba! Follow me!"
+
+                h "Yo 'lum? What's going-"
+
+                a "Just come!"
+
+                scene bg street
+
+                "I grab Hiba with my good arm and run back down Cellulose street, down the turn to Willow Street, Hiba close behind."
+
+                show alum 1arm tired at center
+
+                a "Perdu! We're here!"
+
+                h "Perdu? What's going on?"
+
+                a "Long story, but there's a dog stuck back here. And he's..."
+
+                show alum 1arm stand at center
+
+                a "Gone."
+
+                h "Ah man.. Alum."
+
+                h "Look, we'll have to come back and look for him."
+
+                h "I think right now we need to you get your some.. attention. Let's rest, okay? Tell me the story."
+
+                h "Soon. We'll be back for him, I promise."
+
+                show alum 1arm tired at center
+
+                a "...."
+
+                a "Okay."
+
+                $ gameEnding = 3  
+
+    elif dogLeashed == False:
+
+        a "Yawwwn.."
+
+        "Quite the calming fire.."
+
+        show alum norm tired at left
+
+        "Might doze off for a bit."
+
+        "I close my eyes. It's a sweet quiet darkness with the ambience of fire."
+
+        "That is until.."
+
+        show dog surprise at right
+        
+        p "Bark! Bark Bark!!"
+
+        a "...-huh? whaA"
+
+        "My arm's on fire!"
+
+        hide alum
+
+        "Perdu jumps back and forth as I wave around my arm. Eventually it gets out.."
+
+        show alum 1arm tired at left
+
+        a "Whew.."
+
+        "The dog licks what's left after the flames go out."
+
+        "Ouch.. It's.."
+
+        "Let's get out of here."
+
+        scene bg forest 
+
+        "Eventually, we finally make it to the fateful gate that got us here in the first place."
+        
+        show alum 1arm tired at center
+
+        "Perdu... I don't think I can get both of us over..."
+
+        menu:
+                "Go over without Perdu":
+                    $ dogOverFence = False
+
+                "Get Perdu over":
+                    $ dogOverFence = True
+            
+        if dogOverFence == True:
+                
+            a "Perdu, you go over. Go.. find some help! Please!"
+                
+            show dog stand at right
+            a "Roof!"
+
+            "I'm just able to lift Perdu over the fence. He looks back at me."
+
+            a "Go buddy! Go find help!"
+
+            hide dog
+
+            "Perdu runs off. Hopefully for help.."
+
+            show alum 1arm tired at left
+
+            a "I think I'll.. Lay down for a minute while wait."
+
+            "I slump onto the moist soil."
+
+            "Just for a minute.."
+
+            "Pretty quickly I drift off. Without much more to give.."
+
+            "Lights out."
+
+            $ gameEnding = 2
+
+        elif dogOverFence == False:
+
+            a"I'm.. going to go get help."
+
+            a"Please... Perdu. You stay here."
+
+            "Slowly, I struggle over the fence."
+
+            "Attempt after attempt, finally I end up tumbling over the other end onto the ground."
+
+            scene bg street
+
+            "Slowly, I make my way to help."
+
+            "Step by step, trying to keep my balance, holding the remaining elbow."
+
+            scene bg cafe
+
+            "It's around 5.."
+
+            "I spot Hiba at an open both. He looks at me with concern and gets up."
+
+            h "Alum! Hey..? Girl, what happened?"
+
+            show alum 1arm tired at center
+
+            a "I.. need some help."
+
+            "Before I can explain, I trip on the floorboards."
+
+            "Everything goes black."
+
+            $ gameEnding = 1
+
+        scene bg nadda
+
+        if gameEnding == 1:
+            show alum 1arm tired at center
+            "ENDING 1"
+            "You made it out. Just barely."
+            "The dog... You'll never know." 
+        
+        elif gameEnding == 2:
+            show alum 1arm tired at center
+            "ENDING 2"
+            "Your kindness grants the dog another chance."
+            "Now here you rest."
+
+        elif gameEnding == 3:
+            show alum 1arm stand at center
+            "ENDING 3"
+            "You made it out."
+            "The dog will too... In time."
+
+        elif gameEnding == 4:
+            show alum 1arm stand at center
+            "ENDING 4"
+            "You and the dog, with Hiba's help are all safe."
+        
+        elif gameEnding == 5:
+            show alum norm tired at center
+            "ENDING 5"
+            "You make it out."
+            "By your choice, you make it out alone."
+
+        "Sacrifices had to be made."
             
 
 
